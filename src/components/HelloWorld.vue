@@ -1,4 +1,5 @@
 <template>
+  <img class="img" src="/img/logo.png" />
   <h1>{{ msg }}</h1>
 
   <p>
@@ -8,14 +9,18 @@
     <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
   </p>
 
+  <div class="card" v-for="item,index in 5" :key="index">
+    123
+  </div>
+
 
 
 
   <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
+  <!-- <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  </p> -->
 </template>
 
 <script lang="ts">
@@ -52,5 +57,14 @@ code {
   padding: 2px 4px;
   border-radius: 4px;
   color: #304455;
+}
+
+.img{
+  width:20px;
+}
+
+.card{
+  height:300px;
+  border:1px solid gray;
 }
 </style>
