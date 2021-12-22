@@ -10,8 +10,9 @@
   </p>
 
   <div class="card" v-for="item,index in 5" :key="index">
-    123
+    <van-button type="primary">主要按钮</van-button>
   </div>
+  
 
 
 
@@ -24,16 +25,21 @@
 </template>
 
 <script lang="ts">
-import { getActivityDetail } from '../api'
+import { Button } from 'vant';
+// import { getActivityDetail } from '../api'
 import { defineComponent,ref} from 'vue'
 
 export default defineComponent({
+  components:{
+    [Button.name]: Button
+  },
   props:{
     msg:String
   },
+  
   setup() {
     const count = ref(0)
-    getActivityDetail();
+    // getActivityDetail();
     return{
       count
     }
