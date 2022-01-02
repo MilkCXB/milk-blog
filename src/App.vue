@@ -7,8 +7,20 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  11
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <router-view v-slot="{ Component }">
+        <template v-if="Component">
+            <keep-alive>
+                <suspense>
+                    <component :is="Component"
+                        v-if="$route.meta.keepAlive" />
+                </suspense>
+            </keep-alive>
+            <suspense>
+                <component :is="Component"
+                    v-if="!$route.meta.keepAlive" />
+            </suspense>
+        </template>
+    </router-view>
 </template>
 
 <style>

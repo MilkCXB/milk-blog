@@ -1,6 +1,6 @@
 <template>
-    <div>
-        123
+    <div >
+        我的博客
     </div>
 </template>
 
@@ -10,7 +10,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
     setup() {
-        
+        console.log('HOME');
     },
 })
 </script>
