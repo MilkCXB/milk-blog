@@ -9,21 +9,14 @@ console.log(createWebHistory(''));
 
 const router = createRouter({
   history: createWebHistory(''),
-  routes: [...routes],
-  scrollBehavior(to, from, savedPosition) {
-    return {
-      el: '#app',
-      top: 0,
-      behavior: 'smooth'
-    }
-  }
+  routes: [...routes]
 })
 
 
 
 
 router.beforeEach((to: RouteLocationNormalized, form: RouteLocationNormalized) => {
-
+  
 })
 
 export default router
