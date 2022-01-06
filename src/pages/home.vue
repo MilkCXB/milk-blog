@@ -2,6 +2,10 @@
     <topNavBar></topNavBar>
     <div class="container">
         我的博客
+
+        <div class="content" v-for="item in 5">
+            {{item}}
+        </div>
     </div>
 </template>
 
@@ -21,7 +25,11 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+.content{
+    padding:50px;
+    border-radius: 20px;
+    border: 1px solid gold;
 
-
+}
 
 </style>
