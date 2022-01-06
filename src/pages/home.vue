@@ -1,22 +1,24 @@
 <template>
     <topNavBar></topNavBar>
     <div class="container">
-        我的博客
-
-        <div class="content" v-for="item in 5">
-            {{item}}
+        <div class="content" v-for="item in 12">
+            {{item}} 芜湖
         </div>
+    
     </div>
+    <bottomNavBar></bottomNavBar>
 </template>
 
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import topNavBar from '../components/topNavBar/index.vue'
+import bottomNavBar from '../components/bottomNavBar/index.vue'
 
 export default defineComponent({
     components:{
-        topNavBar
+        topNavBar,
+        bottomNavBar
     },
     setup() {
         console.log('HOME');
