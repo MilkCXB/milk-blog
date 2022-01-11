@@ -41,7 +41,7 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .container {
-  background: url("./img/main-bc.png") no-repeat;
+  background: url("/img/main-bc.png") ;
   //   padding: 40px;
   // background: #f0f0f4;
 }
