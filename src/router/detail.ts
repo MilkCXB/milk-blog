@@ -2,12 +2,12 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routers:Array<RouteRecordRaw>  = [
     {
-      path: '/',
-      name: 'home',
+      path: '/detail',
+      name: 'detail',
       meta: {
-        title: '主页'
+        title: '详情'
     },
-      component: () => import('../pages/home.vue')
+      component: () => import('../pages/detail.vue')
     }
   ]
 

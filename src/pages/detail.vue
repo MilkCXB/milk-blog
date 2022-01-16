@@ -2,13 +2,8 @@
   <div class="container">
     <topNavBar></topNavBar>
     <div class="content">
-      <div class="cover"></div>
-      <div class="card">
-        <div class="title">我是个标题</div>
-        <div class="item-box">
-          <div class="item" @click="goToDetail" v-for="(item, index) in 10"></div>
-        </div>
-      </div>
+      <div class="cover">code</div>
+      
     </div>
     <!-- <div class="content">
             <div class="card" >
@@ -27,7 +22,6 @@
 import { defineComponent } from "vue";
 import topNavBar from "../components/topNavBar/index.vue";
 import bottomNavBar from "../components/bottomNavBar/index.vue";
-import router from '../router';
 
 export default defineComponent({
   components: {
@@ -36,13 +30,6 @@ export default defineComponent({
   },
   setup() {
     console.log("HOME");
-    const goToDetail = ()=>{
-      router.push({name:"detail"})
-    }
-
-    return {
-      goToDetail
-    }
   },
 });
 </script>

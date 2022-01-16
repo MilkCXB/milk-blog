@@ -1,7 +1,7 @@
 <template>
 
   <div class="bar">
-      <img class="icon" src="/img/milk-icon.png" alt="">
+      <img class="icon" src="/img/milk-icon.png" alt="" @click="goHome">
       我的博客demo
       <img class="icon" src="/img/open-icon.png" alt="">
       </div>
@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
+import router from '../../router';
 
 export default defineComponent({
   props: {
@@ -20,8 +21,14 @@ export default defineComponent({
   },
   setup(props: any) {
     const isBlock = computed(() => props.isBlock);
+
+    const goHome = ()=>{
+      router.push({name:'home'})
+    }
+
     return {
       isBlock,
+      goHome
     };
   },
 });
