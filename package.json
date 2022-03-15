@@ -2,7 +2,7 @@
   "name": "milk-blog",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "start": "vite --port 8000",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },

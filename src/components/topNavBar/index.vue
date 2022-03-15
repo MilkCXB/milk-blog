@@ -1,9 +1,9 @@
 <template>
 
   <div class="bar">
-      <img class="icon" src="/img/milk-icon.png" alt="" @click="goHome">
+      <img class="icon" src="/img/milk-icon.png" @click="goHome">
       我的博客demo
-      <img class="icon" src="/img/open-icon.png" alt="">
+      <img class="icon" src="/img/open-icon.png" >
       </div>
   <div v-if="isBlock" class="block"></div>
 </template>
@@ -37,6 +37,7 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .bar {
+  // z-index:2;
 //   padding:0 40px;
   display: flex;
   justify-content: space-between;

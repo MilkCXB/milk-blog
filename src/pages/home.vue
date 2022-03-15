@@ -1,55 +1,68 @@
 <template>
+  <topNavBar></topNavBar>
+  <sideNavbar v-model:show="sildeBarObj.show"></sideNavbar>
   <div class="container">
-    <topNavBar></topNavBar>
     <div class="content">
-      <div class="cover"></div>
-      <div class="card">
-        <div class="title">我是个标题</div>
+      <div class="cover" @click="sildeBarObj.sildeBarShow">
+        <img
+          src="https://t7.baidu.com/it/u=4240641596,3235181048&fm=193&f=GIF"
+        />
+      </div>
+      <div class="code">
+        <div class="title">我的一些感慨</div>
         <div class="item-box">
-          <div class="item" @click="goToDetail" v-for="(item, index) in 10"></div>
+          <div
+            class="item"
+            @click="goToDetail"
+            v-for="(item, index) in 10"
+          ></div>
         </div>
       </div>
     </div>
-    <!-- <div class="content">
-            <div class="card" >
-                <div class="card-title">{{index}}</div>
-                <div class="card-item"></div>
-            </div>
-        
-        
-        </div> -->
   </div>
   <!-- <bottomNavBar></bottomNavBar> -->
 </template>
 
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, reactive } from "vue";
 import topNavBar from "../components/topNavBar/index.vue";
+import sideNavbar from "../components/sideNavbar/index.vue"
 import bottomNavBar from "../components/bottomNavBar/index.vue";
-import router from '../router';
+import router from "../router";
 
 export default defineComponent({
   components: {
     topNavBar,
     bottomNavBar,
+    sideNavbar
   },
   setup() {
     console.log("HOME");
-    const goToDetail = ()=>{
-      router.push({name:"detail"})
-    }
+    const goToDetail = () => {
+      router.push({ name: "detail" });
+    };
+
+    const sildeBarObj = reactive({
+      show:false,
+      sildeBarShow:()=>{
+        sildeBarObj.show = true;
+      }
+    })
+
+   
 
     return {
-      goToDetail
-    }
+      goToDetail,
+      sildeBarObj
+    };
   },
 });
 </script>
 
 <style lang="less" scoped>
 .container {
-  background: url("/img/main-bc.png") ;
+  background: url("/img/main-bc.png");
   //   padding: 40px;
   // background: #f0f0f4;
 }
@@ -59,7 +72,8 @@ export default defineComponent({
 }
 
 .cover {
-  height: 442px;
+  padding: 20px;
+
   background: #ffffff;
   box-shadow: -1px 10px 61px 12px #dbdbdb;
   border-radius: 10px 10px 10px 10px;
@@ -67,7 +81,7 @@ export default defineComponent({
   margin-bottom: 64px;
 }
 
-.card {
+.code {
   .title {
     font-size: 38px;
     font-weight: bold;
