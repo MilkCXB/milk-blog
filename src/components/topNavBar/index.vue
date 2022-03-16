@@ -1,16 +1,21 @@
 <template>
-
+  <sideNavbar v-model:show="sildeBarObj.show"></sideNavbar>
   <div class="bar">
-      <img class="icon" src="/img/milk-icon.png" @click="goHome">
-      我的博客demo
-      <img class="icon" src="/img/open-icon.png" >
-      </div>
+    <img class="icon" src="/img/milk-icon.png" @click="goHome" />
+    MilkBlog-demo
+    <img
+      class="icon"
+      src="/img/open-icon.png"
+      @click="sildeBarObj.sildeBarShow"
+    />
+  </div>
   <div v-if="isBlock" class="block"></div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from "vue";
-import router from '../../router';
+import { computed, defineComponent, reactive } from "vue";
+import sideNavbar from "../../components/sideNavbar/index.vue";
+import router from "../../router";
 
 export default defineComponent({
   props: {
@@ -19,16 +24,28 @@ export default defineComponent({
       default: true,
     },
   },
+  components: {
+    sideNavbar,
+  },
   setup(props: any) {
     const isBlock = computed(() => props.isBlock);
 
-    const goHome = ()=>{
-      router.push({name:'home'})
-    }
+    const goHome = () => {
+      router.push({ name: "home" });
+    };
+
+    const sildeBarObj = reactive({
+      show: false,
+      sildeBarShow: () => {
+        sildeBarObj.show = true;
+      },
+    });
 
     return {
       isBlock,
-      goHome
+      sildeBarObj,
+
+      goHome,
     };
   },
 });
@@ -38,7 +55,7 @@ export default defineComponent({
 <style lang="less" scoped>
 .bar {
   // z-index:2;
-//   padding:0 40px;
+  //   padding:0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,10 +66,10 @@ export default defineComponent({
   width: 100%;
   height: 120px;
 
-  .icon{
-      margin:0 40px;
-      width:80px;
-      height: 80px;
+  .icon {
+    margin: 0 40px;
+    width: 80px;
+    height: 80px;
   }
 }
 

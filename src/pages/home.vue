@@ -1,9 +1,9 @@
 <template>
   <topNavBar></topNavBar>
-  <sideNavbar v-model:show="sildeBarObj.show"></sideNavbar>
-  <div class="container">
+  
+  <div class="container" id="top">
     <div class="content">
-      <div class="cover" @click="sildeBarObj.sildeBarShow">
+      <div class="cover" >
         <img
           src="https://t7.baidu.com/it/u=4240641596,3235181048&fm=193&f=GIF"
         />
@@ -20,6 +20,7 @@
       </div>
     </div>
   </div>
+  <pinTopButton></pinTopButton>
   <!-- <bottomNavBar></bottomNavBar> -->
 </template>
 
@@ -27,15 +28,17 @@
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
 import topNavBar from "../components/topNavBar/index.vue";
-import sideNavbar from "../components/sideNavbar/index.vue"
+
 import bottomNavBar from "../components/bottomNavBar/index.vue";
+import pinTopButton from "../components/common/pinTopButton/index.vue"
 import router from "../router";
 
 export default defineComponent({
   components: {
     topNavBar,
     bottomNavBar,
-    sideNavbar
+ 
+    pinTopButton
   },
   setup() {
     console.log("HOME");
@@ -43,18 +46,12 @@ export default defineComponent({
       router.push({ name: "detail" });
     };
 
-    const sildeBarObj = reactive({
-      show:false,
-      sildeBarShow:()=>{
-        sildeBarObj.show = true;
-      }
-    })
+    
 
    
 
     return {
       goToDetail,
-      sildeBarObj
     };
   },
 });
