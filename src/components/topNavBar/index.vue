@@ -31,7 +31,7 @@ export default defineComponent({
     const isBlock = computed(() => props.isBlock);
 
     const goHome = () => {
-      router.push({ name: "home" });
+      router.push({ name: "Home" });
     };
 
     const sildeBarObj = reactive({

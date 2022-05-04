@@ -1,5 +1,5 @@
 imageName=milk-blog
-registry=registry.cn-hangzhou.aliyuncs.com/milkcxb/milk-blog
+registry=registry.cn-qingdao.aliyuncs.com/milkcxb/milk-blog
 
 
 install:

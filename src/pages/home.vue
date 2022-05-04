@@ -1,9 +1,9 @@
 <template>
   <topNavBar></topNavBar>
-  
+
   <div class="container" id="top">
     <div class="content">
-      <div class="cover" >
+      <div class="cover">
         <img
           src="https://t7.baidu.com/it/u=4240641596,3235181048&fm=193&f=GIF"
         />
@@ -28,27 +28,22 @@
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
 import topNavBar from "../components/topNavBar/index.vue";
-
 import bottomNavBar from "../components/bottomNavBar/index.vue";
-import pinTopButton from "../components/common/pinTopButton/index.vue"
+import pinTopButton from "../components/common/pinTopButton/index.vue";
 import router from "../router";
 
 export default defineComponent({
   components: {
     topNavBar,
     bottomNavBar,
- 
-    pinTopButton
+
+    pinTopButton,
   },
   setup() {
     console.log("HOME");
     const goToDetail = () => {
-      router.push({ name: "detail" });
+      router.push({ name: "Detail" });
     };
-
-    
-
-   
 
     return {
       goToDetail,
